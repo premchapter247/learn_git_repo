@@ -1,0 +1,290 @@
+
+https://www.codegrepper.com/code-examples/php/php+limit+string+length
+https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@ MY SQL REMOVE FULL GROUP BY QUERY @@@@@@@@
+
+
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''))
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+
+
+@@@@@@@@@@@@@@ GIT Importants
+GIT username - premchapter247
+GIT Password - prem@@123
+
+
+-- GIT -  Its a basically version controlling tool or system
+-- GITHUB - Hosting service, web based hosting website
+ - Distributed contrl system
+ - 
+
+
+ git init -> for initiate the project
+ git status -> to check the status of the folder or branch ( any commit o not till now ) ( Which all changes you have made ) List the files of the status
+ git add -> add files to the staging area, not on the final project of directory, but it means its pushed to the git.
+ git commit -m "comment" ->  commit command is use for final commit of the files, or it move files from staging to the main folder of the git server
+
+ git log  -> for check all the logs till now, means how many commits you have done till now, its provides all informations.
+
+
+ git rm --cached -> this is used for removing files from staging area, means if you just add file with git add and then you want to remove this file from it then you can use this command.( we can say unstage )
+
+ git branch - To create new branch from the master branch 
+ git checkout "Branch Name" - To move a branch to another branch
+ git commit -am "commit name" - it will skip the git add, means this comman will do both things add and commit as well.
+ git mearge - its used for merge two or more then two branches, then the code will get merge
+
+ git remote -v - check how many remote are there.
+
+ git remot add origin "https://github.com/premchapter247/learn_git_repo" - its use when you create a folder or files on your comuter or on local machine, then you want to push that code int the github server then you have to run this and below command
+ git push -u origin master - it will push the code 
+
+ git fetch - It is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available).
+
+ git pull -  on the other hand does that AND brings (copy) those changes from the remote repository.
+ for example git pull origin dev bugfix
+
+ git pull origin "branch name" - to get updated data from remot server or from github, we use this command
+ git push origin dev - git push origin "branch name"
+
+ git ignore - this command is used for ignoring the files for e.g if a folder have 10 files and i just want to push only 5 files then it can done by this command
+
+ git add . - all files will add o go into staging we do not need to write files names.
+
+ git stash - remov the local changes, if yo run this command.              
+
+
+
+git stash, which makes a temporary, local save of your code
+git reset, which lets you tidy up your code before doing a commit
+git bisect, a function that allows you to hunt out bad commits
+git squash, which allows you to combine your commits
+git rebase, which allows for applying changes from one branch onto another
+
+
+https://www.freecodecamp.org/news/the-beginners-guide-to-git-github/
+
+https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
+
+https://github.com/prempan/github-slideshow/settings
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ 
+ AWS Commands for set crons 
+
+crontab -e - set cron jobs editor
+crontab -l
+
+save cron with ctr+x add press y
+
+0 2 * * * curl --silent https://urstore.net/backend/orders/order_mail
+it will run at 2 AM morning 
+0 2 * * * curl --silent https://urstore.ca/backend/orders/order_mail
+
+
+### Doc for cron 
+https://www.cumulations.com/blogs/37/How-to-write-Cron-jobs-on-Amazon-Web-ServicesAWS-EC2-server
+
+### Direct set cron website link
+https://crontab.guru/#0_2_*_*_*
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+@@@@@@@@@@@@@@@ MYSQL START @@@@@@@@@@@@@@@@@
+https://www.c-sharpcorner.com/blogs/group-by-vs-distinct-difference-in-sql-server#:~:text=DISTINCT%20is%20used%20to%20filter,aggregate%20operators%20to%20each%20group.
+
+@@@@@@@@@@@@@@@ MYSQL VIEWS START @@@@@@@@@@@@@@@@@
+
+VIEWS - A VIEW in SQL Server is like a virtual table that contains data from one or multiple tables. It does not hold any data and does not exist physically in the database. Similar to a SQL table, the view name should be unique in a database. It contains a set of predefined SQL queries to fetch data from the database. It can contain database tables from single or multiple databases as well.
+
+We can create view like  below query, we can use multiple tables with join and create view.
+
+CREATE VIEW wp_post_title as SELECT ID,post_title,post_content,post_date FROM wp_posts where post_title like "%Home%"
+
+
+
+Use the following queries to perform DML( Insert Update Delete ) operation using VIEW in SQL Server.
+
+Insert Data from views
+Insert into DemoView values(4,'CC','KK','RR')
+
+Delete Data from views
+Delete from DemoView where TableID=7
+
+Update Data from views
+Update DemoView set value='Raj' where TableID=5
+
+
+We can drop SQL views
+DROP VIEW demoview;
+
+show crate view ( What query was run when you created view )
+SHOW CREATE VIEW wp_post_title
+
+We can change the SQL statement in a VIEW using the following alter VIEW command. Suppose we want to change the condition in the where clause of a VIEW. Execute the following query.
+Alter VIEW DemoView
+AS
+     SELECT *
+     FROM [dbo].[MyTable]
+     WHERE [Codeone] LIKE 'C%'
+WITH CHECK OPTION;
+
+
+CREATE OR ALTER VIEW DemoView
+AS SELECT *
+   FROM [dbo].[MyTable]
+   WHERE [Codeone] LIKE 'C%'
+WITH CHECK OPTION
+
+
+########### NOT UPDATABLE VIEWS
+For a view to be updatable, there must be a one-to-one relationship between the rows in the view and the rows in the underlying table. There are also certain other constructs that make a view nonupdatable. To be more specific, a view is not updatable if it contains any of the following:
+
+Aggregate functions (SUM(), MIN(), MAX(), COUNT(), and so forth)
+
+DISTINCT
+
+GROUP BY
+
+HAVING
+
+UNION or UNION ALL
+
+Subquery in the select list
+
+Certain joins (see additional join discussion later in this section)
+
+Reference to nonupdatable view in the FROM clause
+
+Subquery in the WHERE clause that refers to a table in the FROM clause
+
+Refers only to literal values (in this case, there is no underlying table to update)
+
+ALGORITHM = TEMPTABLE (use of a temporary table always makes a view nonupdatable)
+
+
+IMPORTANT LINK FOR READING
+https://dev.mysql.com/doc/refman/5.6/en/view-syntax.html
+https://dev.mysql.com/doc/refman/5.6/en/view-updatability.html
+
+@@@@@@@@@@@@@@@ MYSQL VIEWS END @@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@ MySQL Stored Procedure Start @@@@@@@@@@@@@@@@@@@@
+
+For create 
+CREATE PROCEDURE proc_name
+
+For show 
+SHOW CREATE PROCEDURE proc_name
+e.g 
+CREATE PROCEDURE wp_post_proc() SELECT * FROM wp_posts
+CREATE PROCEDURE wp_term_proc() SELECT * from wp_terms
+
+
+Labels are permitted for BEGIN ... END blocks and for the LOOP, REPEAT, and WHILE statements. Here is the syntax 
+[begin_label:] 
+BEGIN    
+[statement_list]  
+END [end_label]    
+[begin_label:] 
+LOOP      
+statement_list  
+END LOOP 
+[end_label]    
+[begin_label:] 
+REPEAT            
+statement_list  
+UNTIL search_condition  
+END 
+REPEAT [end_label]    
+[begin_label:] 
+WHILE search_condition 
+DO           
+statement_list  
+END WHILE 
+[end_label]
+
+Label use for those statements which follows following rules:
+
+begin_label must be followed by a colon
+begin_label can be given without end_label. If end_label is present, it must be the same as begin_label
+end_label cannot be given without begin_label.
+Labels at the same nesting level must be distinct
+Labels can be up to 16 characters long.
+
+
+
+
+
+CREATE PROCEDURE wp_term_proc_1()
+BEGIN 
+DECLARE a INT DEFAULT 10;// these are the statements
+DECLARE b, c INT;
+SET a = a + 100; 
+SET b= 2; 
+SET c = a+b; 
+BEGIN
+DECLARE c INT; SET c = 5;
+SELECT a,b,c END; 
+SELECT a,b,c END
+
+
+
+SET @data = '{  
+    "Person": {    
+       "Name": "Homer", 
+       "Age": 39,
+       "Hobbies": ["Eating", "Sleeping"]  
+    },
+     "Person": {    
+       "Name": "Homer", 
+       "Age": 39,
+       "Hobbies": ["Eating", "Sleeping"]  
+    }
+ }';
+ SELECT JSON_EXTRACT(@data, '$.Person.Name', '$.Person.Age', '$.Person.Hobbies[1]') AS 'Result'
+
+ [{"type":"%","tax_name":"GST","tax_rate":"5","name":"GST (5 %)","rate":1.475},,{"type":"%","tax_name":"PST","tax_rate":"7","name":"PST (7 %)","rate":2.065}]
+
+https://www.w3resource.com/mysql/mysql-procedure.php#:~:text=A%20procedure%20(often%20called%20a,MySQL%205%20introduce%20stored%20procedure.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@
+function test($a=''){
+    $temp = 0;
+    echo count($a);
+    echo sizeOf($a);
+    for($i=0;$i<sizeOf($a);$i++){
+        $temp += $a[$i];
+    }
+    return $temp;
+}
+
+echo test(array(1,2,3,4,5,6));
+-------------------------------------------
+function test($a=''){
+   if($a%2==0)
+    echo "Even Number";
+
+   else
+    echo "Odd Number";
+}
+
+echo test(75);
+
+https://www.geeksforgeeks.org/php-check-number-prime/
+https://www.geeksforgeeks.org/double-not-operator-in-php/?ref=lbp
+https://www.javatpoint.com/php-programs
+--------------------------------------------
+@@@@@@@@@@@@@@@ MySQL Stored Procedure End   @@@@@@@@@@@@@@@@@@@@
+
+
+@@@@@@@@@@@@@@@@ MYSQL END  @@@@@@@@@@@@@@@@@
