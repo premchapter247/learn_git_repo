@@ -21,6 +21,8 @@ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''))
 GIT username - premchapter247
 GIT Password - prem@@123
 
+GIT username - prempan
+GIT Password - prem@@123
 
 -- GIT -  Its a basically version controlling tool or system
 -- GITHUB - Hosting service, web based hosting website
@@ -33,12 +35,23 @@ GIT Password - prem@@123
  git add -> add files to the staging area, not on the final project of directory, but it means its pushed to the git.
  git commit -m "comment" ->  commit command is use for final commit of the files, or it move files from staging to the main folder of the git server
 
+
+git remot add origin "https://github.com/premchapter247/learn_git_repo" - its use when you create a folder or files on your comuter or on local machine, then you want to push that code int the github server then you have to run this and below command
+ git push -u origin master - it will push the code 
+
+git push -u origin master
+
+
  git log  -> for check all the logs till now, means how many commits you have done till now, its provides all informations.
 
 
  git rm --cached -> this is used for removing files from staging area, means if you just add file with git add and then you want to remove this file from it then you can use this command.( we can say unstage )
 
  git branch - To create new branch from the master branch 
+
+ git checkout -b 'branch_name'
+
+ 
  git checkout "Branch Name" - To move a branch to another branch
  git commit -am "commit name" - it will skip the git add, means this comman will do both things add and commit as well.
  git mearge - its used for merge two or more then two branches, then the code will get merge
